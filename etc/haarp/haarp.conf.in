@@ -1,24 +1,24 @@
 #
-# PARAMETROS PARA EL HAARP
+# Parameters
 CACHEDIR /haarp/
 PLUGINSDIR /etc/haarp/plugins/
-# En porcentage (%)
+# Limit in percent (%)
 CACHE_LIMIT 95
 
-#Zero Penalty Hit para haarp
-# defecto:
+#Zero Penalty Hit for haarp
+# defects:
 # ZPH_TOS_LOCAL 0
-# recomendado:
+# recomended:
 # ZPH_TOS_LOCAL 8
 
 #
-# Configuración del MySQL
+#  MySQL Configuration
 MYSQL_HOST localhost
 MYSQL_USER root
 MYSQL_PASS haarpcache
 MYSQL_DB haarp
 
-# extenciones
+# extentions
 JPG_MIN 1000
 JPG_MAX 0
 JPG_EXP 86400
@@ -94,55 +94,52 @@ PDF_EXP 86400
 ORKUT_NORESUME true
 ORKUT_NODOWN true
 #
-# Por razones de seguridad es mejor no correr un proxy con el usuario root
-# Pero esto no fue probado, entonces ejecutelo como root
-# Cualquier noticia acerca de esto será bienvenido!
+# For security reasons its best not to run as root
 #
 # Default:
 # USER root
 # GROUP root
 
 #
-# Si es true, correr el haarp en background
-# No es recomendado usar false, podría generar inestabilidad
+# Run as a daemon service
+# Set false to run in foreground
 #
 # Default:
 # Padrão:
 # DAEMON true
 
 #
-# Lugar donde gravar el pidfile
-# Esencial para el funcionamento del Haarp
-# y também del script /etc/init.d/haarp
+# pidfile location
+# Userd by Haarp and init.d
 #
 # Default:
 PIDFILE @localstatedir@/log/haarp/haarp.pid
 
 #
-# Número de childs creados por Haarp
-# Se iniciará con el valor de SERVERNUMBER
-# e irá creando childs hasta el límite de MAXSERVERS
+# Number of child processes
+# initial value SERVERNUMBER
+# Maximum value MAXSERVERS
 #
 # Default:
 SERVERNUMBER 250
 MAXSERVERS 1000
  
-# Archivos donde serán guardados los access/errores
+# Logging
 #
 # Default:
 # ACCESSLOG @localstatedir@/log/haarp/access.log
 # ERRORLOG @localstatedir@/log/haarp/haarp.log
 
 #
-# Niveles de logs
-#  0 = Sólo errores graves
-#  1 = Informacion detallada.
+# Log levels
+#  0 = ERROR
+#  1 = VERBOSE
 #
 # Default:
 LOGLEVEL 0
 
 #
-# Correr el Haarp como proxy transparente?
+# Run as a transparent proxy
 #
 # Default:
 # TRANSPARENT false
@@ -155,32 +152,27 @@ LOGLEVEL 0
 # PARENTPROXY localhost
 # PARENTPORT 3128
 
-#
-# Esto activa escribir en los logs la IP real del usuario, y no la IP del proxya
-# que posiblemente es la que se encuentre frente al Haarp
-# No testeado
+# Write a users real IP addres in logs
 #
 # Default:
 # FORWARDED_IP false
 
 #
-# Enviar X-Forwarded-For: para servers?
+# Enable X-Forwarded-For headers
 #
-# No se recomiendo su uso, los sites descubrirán
-# la IP interna de su red
 #
 # Default:
 # X_FORWARDED_FOR false
 
 #
-# Puerto de escucha del Haarp.
+# Proxy listening port
 #
 # Default:
-# PORT 8080
+PORT 8123
 
 #
-# IP que HAARP escuchará las solicitudes
-# Deja por defecto para escuchar en todas las interfaces
+# Proxy listening address
+#
 # Default:
 # BIND_ADDRESS 127.0.0.1
 
