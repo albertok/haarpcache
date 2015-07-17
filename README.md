@@ -20,11 +20,8 @@ HaarpCache is a robust static and dynamic cache that provides support to the DAS
 ## Installing
 
 	su
-	apt-get update 
-	apt-get upgrade
-	apt-get install build-essential mysql-server mysql-client php5 apache2 php5-mysql \
-	libblkid-dev libcurl4-gnutls-dev libmysqlclient15-dev libapache2-mod-auth-mysql \
-	libapache2-mod-php5 sharutils curl autoconf squid3
+	yum install gcc gcc-c++ mysql mysql-server mysql-devel mysql-libs php php-mysql libblkid-devel
+	cp /usr/lib64/mysql/libmysqlclient* /usr/lib64/
 	cd /usr/src/
 	git clone https://github.com/keikurono/haarpcache.git
 	cd haarpcache
